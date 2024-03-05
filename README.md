@@ -1,10 +1,8 @@
 # Creating a .NET MAUI Fastline Chart to visualize Arctic sea ice cover
-This article demonstrates how to create the .NET MAUI Fastline Chart to visualize Arctic sea ice cover.
+  This article demonstrates how to create the .NET MAUI Fastline Chart to visualize Arctic sea ice cover.
 
 ## Fastline Chart
-A [Fastline chart](https://help.syncfusion.com/maui/cartesian-charts/fastline), a variant of a line chart, is particularly suitable for efficiently handling a large volume of data.
-
-<img width="960" alt="Screenshot 2024-03-05 160218" src="https://github.com/SyncfusionExamples/Creating-a-.NET-MAUI-Fastline-Chart-to-visualize-Arctic-sea-ice-cover/assets/129383872/d42479aa-524f-4f7d-89a0-aeaad30f3989">
+  Fastline charts, a variation of line charts, are particularly skilled at efficiently managing large data sets. Using a Fastline chart speeds up the rendering time of a series, making it ideal for monitoring system performance.
 
 ## Customization
 
@@ -17,6 +15,8 @@ A [Fastline chart](https://help.syncfusion.com/maui/cartesian-charts/fastline), 
 ### Plot area background view
   We can add any view to the plot area by using the property [PlotAreaBackgroundView](https://help.syncfusion.com/maui/cartesian-charts/appearance)
 
+<img width="960" alt="Screenshot 2024-03-05 160218" src="https://github.com/SyncfusionExamples/Creating-a-.NET-MAUI-Fastline-Chart-to-visualize-Arctic-sea-ice-cover/assets/129383872/d42479aa-524f-4f7d-89a0-aeaad30f3989">
+
 ## Troubleshooting:
 ### Path too long exception:
-If you encounter a path too long exception when building this example project, close Visual Studio and rename the repository to a shorter name before building the project. For a step-by-step procedure, refer to the [Arctic sea ice cover blog.]()
+  If you encounter a path too long exception when building this example project, close Visual Studio and rename the repository to a shorter name before building the project. For a step-by-step procedure, refer to the [Arctic sea ice cover blog.]()
