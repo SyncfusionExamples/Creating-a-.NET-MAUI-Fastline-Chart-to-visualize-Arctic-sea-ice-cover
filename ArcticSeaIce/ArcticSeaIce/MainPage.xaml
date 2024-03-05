@@ -63,7 +63,7 @@
             </chart:SfCartesianChart.Resources>
 
             <chart:SfCartesianChart.XAxes>
-                <chart:DateTimeAxis ShowMajorGridLines="False" PlotOffsetEnd="30">
+                <chart:DateTimeAxis ShowMajorGridLines="False" PlotOffsetEnd="30" IntervalType="Months">
                     <chart:DateTimeAxis.LabelStyle>
                         <chart:ChartAxisLabelStyle TextColor="Black" LabelFormat="MMM"/>
                     </chart:DateTimeAxis.LabelStyle>
@@ -98,13 +98,21 @@
                 </chart:ChartLegend>
             </chart:SfCartesianChart.Legend>
 
+            <!--series 1-->
             <chart:FastLineSeries Label="2000" ItemsSource="{Binding Year2000}" XBindingPath="Month" YBindingPath="Value" EnableTooltip="True" TooltipTemplate="{StaticResource template}"/>
+            <!--series 2-->
             <chart:FastLineSeries Label="2005" ItemsSource="{Binding Year2005}" XBindingPath="Month" YBindingPath="Value" EnableTooltip="True" TooltipTemplate="{StaticResource template}"/>
+            <!--series 3-->
             <chart:FastLineSeries Label="2010" ItemsSource="{Binding Year2010}" XBindingPath="Month" YBindingPath="Value" EnableTooltip="True" TooltipTemplate="{StaticResource template}"/>
+            <!--series 4-->
             <chart:FastLineSeries Label="2015" ItemsSource="{Binding Year2015}" XBindingPath="Month" YBindingPath="Value" EnableTooltip="True" TooltipTemplate="{StaticResource template}"/>
+            <!--series 5-->
             <chart:FastLineSeries Label="2020" ItemsSource="{Binding Year2020}" XBindingPath="Month" YBindingPath="Value" EnableTooltip="True" TooltipTemplate="{StaticResource template}"/>
+            <!--series 6-->
             <chart:FastLineSeries Label="2021" ItemsSource="{Binding Year2021}" XBindingPath="Month" YBindingPath="Value" EnableTooltip="True" TooltipTemplate="{StaticResource template}"/>
+            <!--series 7-->
             <chart:FastLineSeries Label="2022" ItemsSource="{Binding Year2022}" XBindingPath="Month" YBindingPath="Value" EnableTooltip="True" TooltipTemplate="{StaticResource template}"/>
+            <!--series 8-->
             <chart:FastLineSeries Label="2023" ItemsSource="{Binding Year2023}" XBindingPath="Month" YBindingPath="Value" EnableTooltip="True" TooltipTemplate="{StaticResource template}"/>
 
         </chart:SfCartesianChart>
