@@ -15,7 +15,8 @@
 ### Plot area background view
   We can add any view to the plot area by using the property [PlotAreaBackgroundView](https://help.syncfusion.com/maui/cartesian-charts/appearance)
 
-<img width="960" alt="Screenshot 2024-03-05 160218" src="https://github.com/SyncfusionExamples/Creating-a-.NET-MAUI-Fastline-Chart-to-visualize-Arctic-sea-ice-cover/assets/129383872/d42479aa-524f-4f7d-89a0-aeaad30f3989">
+## Output
+![ArcticSeaIce](https://github.com/SyncfusionExamples/Creating-a-.NET-MAUI-Fastline-Chart-to-visualize-Arctic-sea-ice-cover/assets/129383872/c0bcf1d0-71eb-4907-9121-6e49b934dc52)
 
 ## Troubleshooting:
 ### Path too long exception:
