@@ -9,7 +9,7 @@ namespace ArcticSeaIce
 {
     public class TooltipConverter : IValueConverter
     {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
             var year = value is Model ? (value as Model).Year : value;
             SolidColorBrush brush = (SolidColorBrush)Colors.Transparent;
@@ -49,7 +49,7 @@ namespace ArcticSeaIce
             return brush;
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
             return value;
         }

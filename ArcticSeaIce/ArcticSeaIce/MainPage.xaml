@@ -4,7 +4,6 @@
              xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
              xmlns:model="clr-namespace:ArcticSeaIce"
              x:Class="ArcticSeaIce.MainPage">
-
     <Border Margin="25"  StrokeThickness="1" Stroke="#8d8794">
         <chart:SfCartesianChart PaletteBrushes="{Binding PaletteBrushes}" Background="#8CDDFBFB">
 
@@ -91,7 +90,7 @@
                             <Grid ColumnDefinitions="Auto,Auto" Padding="{OnPlatform Default='20,0,5,0',Android='20,1,0,0',iOS='20,1,0,0'}">
                                 <Rectangle Fill="{Binding IconBrush}" Margin="0,0,0,0" WidthRequest="{OnPlatform Default=20,Android=15,iOS=15}" HeightRequest="{OnPlatform Default=10,Android=7,iOS=7}"/>
                                 <Label Grid.Column="1" Text="{Binding Item.Label}" TextColor="Black"
-                    FontSize="{OnPlatform Android=9,iOS=9,Default=14}" Padding="5,0,45,0"/>
+                 FontSize="{OnPlatform Android=9,iOS=9,Default=14}" Padding="5,0,45,0"/>
                             </Grid>
                         </DataTemplate>
                     </chart:ChartLegend.ItemTemplate>
