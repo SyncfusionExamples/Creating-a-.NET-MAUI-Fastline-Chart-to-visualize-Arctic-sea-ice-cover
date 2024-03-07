@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
+             xmlns:model="clr-namespace:ArcticSeaIceCover"
+             x:Class="ArcticSeaIceCover.MainPage">
+
+    <Border Margin="25"  StrokeThickness="1" Stroke="#8d8794">
+        <chart:SfCartesianChart PaletteBrushes="{Binding PaletteBrushes}" Background="#8CDDFBFB">
+
+            <chart:SfCartesianChart.BindingContext>
+                <model:ViewModel/>
+            </chart:SfCartesianChart.BindingContext>
+
+            <chart:SfCartesianChart.Title>
+                <Grid Padding="{OnPlatform Default='0,0,0,20',Android='10,0,0,0',iOS='10,0,0,0'}" ColumnDefinitions="60,*"  RowDefinitions="60,*">
+                    <Path Data="{StaticResource PathData}" Grid.RowSpan="1"  Grid.Column="0" HeightRequest="{OnPlatform Default=40}" WidthRequest="40" Margin="0,15,10,0" Fill="#2196F3">
+                        <Path.RenderTransform>
+                            <ScaleTransform ScaleX="{OnPlatform Default=1.3,Android = 1.1,iOS=1.1}" ScaleY="{OnPlatform Default=1.3,Android=1.1,iOS=1.1}"/>
+                        </Path.RenderTransform>
+                    </Path>
+                    <VerticalStackLayout Grid.Row="0" Grid.Column="1">
+                        <Label Text="Arctic Meltdown: Record Low Sea Ice Cover in 2023" FontSize="18" Margin="0,12,0,0"/>
+                        <Label Text="Unraveling the Environmental Consequences and Global Climate Trends Amidst the Rapid Decline" TextColor="Grey" FontSize="{OnPlatform Android=13,iOS=13}" Margin="2"/>
+                    </VerticalStackLayout>
+                </Grid>
+            </chart:SfCartesianChart.Title>
+
+            <chart:SfCartesianChart.PlotAreaBackgroundView>
+                <Grid HorizontalOptions="End" VerticalOptions="Start">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{OnPlatform Default=170,Android=100,iOS=100}"/>
+                        <ColumnDefinition Width="{OnPlatform Default=275,Android=170,iOS=170}"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="1"  Grid.Column="0" Source="mountain.png" HeightRequest="{OnPlatform Default=150,Android=100,iOS=100}" WidthRequest="{OnPlatform Default=200,Android=150,iOS=150}" />
+                    <Label Grid.RowSpan="2"  Grid.Column="1" Text="Average monthly sea ice extent since 2000" HeightRequest="{OnPlatform Default=65,Android=45,iOS=45}" FontSize="{OnPlatform Default=12.5,Android=11,iOS=11}" />
+                </Grid>
+            </chart:SfCartesianChart.PlotAreaBackgroundView>
+
+            <chart:SfCartesianChart.Resources>
+                <ResourceDictionary>
+                    <x:String x:Key="PathData">M7.9500122,0L9.6599731,0 11.572021,3.2200022 13.182007,0.401978 14.893005,0.401978 15.697998,1.9119878 13.182007,6.2389849 16,11.069003 18.817993,6.2389849 16.302002,1.9119878 17.106995,0.401978 18.817993,0.401978 20.427979,3.2200022 22.339966,0 24.049988,0 24.85498,1.5090032 22.942993,4.7290051 26.263977,4.7290051 27.06897,6.2389849 26.263977,7.747988 21.333008,7.747988 18.515991,12.578983 24.049988,12.578983 26.565979,8.2509783 28.276978,8.2509783 29.08197,9.760989 27.471985,12.578983 31.195007,12.578983 32,14.087986 31.195007,15.596988 27.471985,15.596988 29.08197,18.414983 28.276978,19.923985 26.565979,19.923985 24.049988,15.596988 18.515991,15.596988 21.333008,20.427983 26.263977,20.427983 27.06897,21.936986 26.263977,23.446997 22.942993,23.446997 24.85498,26.666999 24.049988,28.176001 22.339966,28.176001 20.427979,24.956 18.817993,27.773993 17.106995,27.773993 16.302002,26.263984 18.817993,21.936986 16,17.106999 13.182007,21.936986 15.697998,26.263984 14.893005,27.773993 13.182007,27.773993 11.572021,24.956 9.6599731,28.176001 7.9500122,28.176001 7.1450195,26.666999 9.0570068,23.446997 5.7359619,23.446997 4.9309692,21.936986 5.7359619,20.427983 10.666992,20.427983 13.484009,15.596988 7.9500122,15.596988 5.434021,19.923985 3.7229614,19.923985 2.9179688,18.414983 4.5280151,15.596988 0.80499268,15.596988 0,14.087986 0.80499268,12.578983 4.5280151,12.578983 2.9179688,9.760989 3.7229614,8.2509783 5.434021,8.2509783 7.9500122,12.578983 13.484009,12.578983 10.666992,7.747988 5.7359619,7.747988 4.9309692,6.2389849 5.7359619,4.7290051 9.0570068,4.7290051 7.1450195,1.5090032z</x:String>
+                    <model:TooltipConverter x:Key="converter"/>
+                    <DataTemplate x:Key="template">
+                        <StackLayout Orientation="Horizontal">
+                            <Rectangle HeightRequest="30" WidthRequest="8" Fill="{Binding Item, Converter={StaticResource converter}}"/>
+                            <StackLayout Orientation="Vertical">
+                                <HorizontalStackLayout>
+                                    <Label Text="{Binding Item.Month}" TextColor="White" FontFamily="Helvetica" FontSize="12.5" Padding="5,0,0,0"/>
+                                    <Label Text="{Binding Item.Date}" TextColor="White" FontFamily="Helvetica" FontSize="12.5" Padding="5,0,0,0"/>
+                                    <Label Text=", " TextColor="White" FontFamily="Helvetica" FontSize="12.5"/>
+                                    <Label Text="{Binding Item.Year}" TextColor="White" FontFamily="Helvetica" FontSize="12.5" Padding="5,0,0,0"/>
+                                </HorizontalStackLayout>
+                                <Label Text="{Binding Item.Value}" TextColor="White" FontFamily="Helvetica" FontSize="12" Padding="5,0,0,0" Margin="0,2,0,0"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </DataTemplate>
+                </ResourceDictionary>
+            </chart:SfCartesianChart.Resources>
+
+            <chart:SfCartesianChart.XAxes>
+                <chart:DateTimeAxis ShowMajorGridLines="False" PlotOffsetEnd="30" IntervalType="Months">
+                    <chart:DateTimeAxis.LabelStyle>
+                        <chart:ChartAxisLabelStyle TextColor="Black" LabelFormat="MMM"/>
+                    </chart:DateTimeAxis.LabelStyle>
+                    <chart:DateTimeAxis.Title>
+                        <chart:ChartAxisTitle Text="Month" TextColor="Black" FontSize="{OnPlatform Android=10,Default=12.5,iOS=10}"/>
+                    </chart:DateTimeAxis.Title>
+                </chart:DateTimeAxis>
+            </chart:SfCartesianChart.XAxes>
+
+            <chart:SfCartesianChart.YAxes>
+                <chart:NumericalAxis EdgeLabelsDrawingMode="Center" ShowMajorGridLines="False" PlotOffsetEnd="{OnPlatform Default=50,Android=5,iOS=5}" Minimum="2" Maximum="18" Interval="2">
+                    <chart:NumericalAxis.Title>
+                        <chart:ChartAxisTitle Text="Extent (millions of square kilometers)" TextColor="Black" FontSize="{OnPlatform Android=10,Default=12.5,iOS=10}"/>
+                    </chart:NumericalAxis.Title>
+                    <chart:NumericalAxis.LabelStyle>
+                        <chart:ChartAxisLabelStyle TextColor="Black"/>
+                    </chart:NumericalAxis.LabelStyle>
+                </chart:NumericalAxis>
+            </chart:SfCartesianChart.YAxes>
+
+            <chart:SfCartesianChart.Legend>
+                <chart:ChartLegend Placement="Right" ToggleSeriesVisibility="True">
+                    <chart:ChartLegend.ItemTemplate>
+                        <DataTemplate>
+                            <Grid ColumnDefinitions="Auto,Auto" Padding="{OnPlatform Default='20,0,5,0',Android='20,1,0,0',iOS='20,1,0,0'}">
+                                <Rectangle Fill="{Binding IconBrush}" Margin="0,0,0,0" WidthRequest="{OnPlatform Default=20,Android=15,iOS=15}" HeightRequest="{OnPlatform Default=10,Android=7,iOS=7}"/>
+                                <Label Grid.Column="1" Text="{Binding Item.Label}" TextColor="Black"
+                FontSize="{OnPlatform Android=9,iOS=9,Default=14}" Padding="5,0,45,0"/>
+                            </Grid>
+                        </DataTemplate>
+                    </chart:ChartLegend.ItemTemplate>
+                </chart:ChartLegend>
+            </chart:SfCartesianChart.Legend>
+
+            <!--series 1-->
+            <chart:FastLineSeries Label="2000" ItemsSource="{Binding Year2000}" XBindingPath="Month" YBindingPath="Value" EnableTooltip="True" TooltipTemplate="{StaticResource template}"/>
+            <!--series 2-->
+            <chart:FastLineSeries Label="2005" ItemsSource="{Binding Year2005}" XBindingPath="Month" YBindingPath="Value" EnableTooltip="True" TooltipTemplate="{StaticResource template}"/>
+            <!--series 3-->
+            <chart:FastLineSeries Label="2010" ItemsSource="{Binding Year2010}" XBindingPath="Month" YBindingPath="Value" EnableTooltip="True" TooltipTemplate="{StaticResource template}"/>
+            <!--series 4-->
+            <chart:FastLineSeries Label="2015" ItemsSource="{Binding Year2015}" XBindingPath="Month" YBindingPath="Value" EnableTooltip="True" TooltipTemplate="{StaticResource template}"/>
+            <!--series 5-->
+            <chart:FastLineSeries Label="2020" ItemsSource="{Binding Year2020}" XBindingPath="Month" YBindingPath="Value" EnableTooltip="True" TooltipTemplate="{StaticResource template}"/>
+            <!--series 6-->
+            <chart:FastLineSeries Label="2021" ItemsSource="{Binding Year2021}" XBindingPath="Month" YBindingPath="Value" EnableTooltip="True" TooltipTemplate="{StaticResource template}"/>
+            <!--series 7-->
+            <chart:FastLineSeries Label="2022" ItemsSource="{Binding Year2022}" XBindingPath="Month" YBindingPath="Value" EnableTooltip="True" TooltipTemplate="{StaticResource template}"/>
+            <!--series 8-->
+            <chart:FastLineSeries Label="2023" ItemsSource="{Binding Year2023}" XBindingPath="Month" YBindingPath="Value" EnableTooltip="True" TooltipTemplate="{StaticResource template}"/>
+
+        </chart:SfCartesianChart>
+    </Border>
+
+</ContentPage>
