@@ -47,13 +47,13 @@ namespace ArcticSeaIce
         public IEnumerable<Model> ReadCSV(int value)
         {
             Assembly executingAssembly = typeof(App).GetTypeInfo().Assembly;
-            Stream inputStream = executingAssembly.GetManifestResourceStream("ArcticSeaIce.Resources.Raw.Sea_Ice_Data.csv");
+            Stream? inputStream = executingAssembly.GetManifestResourceStream("ArcticSeaIce.Resources.Raw.Sea_Ice_Data.csv");
             string line;
             List<string> lines = new List<string>();
             if (inputStream != null)
             {
                 using StreamReader reader = new StreamReader(inputStream);
-                while ((line = reader.ReadLine()) != null)
+                while ((line = reader.ReadLine()!) != null)
                 {
                     lines.Add(line);
                 }
@@ -62,7 +62,7 @@ namespace ArcticSeaIce
             lines.RemoveAt(0);
             return lines.Select(line => {
                 string[] data = line.Split(',');
-                string year = null;
+                string year = "";
                 if (value == 2)
                 {
                     year = "2000";

@@ -11,9 +11,9 @@ namespace ArcticSeaIce
     {
         public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
-            var year = value is Model ? (value as Model).Year : value;
+            var year = value is Model ? (value as Model)?.Year : value;
             SolidColorBrush brush = (SolidColorBrush)Colors.Transparent;
-            if (year.Equals("2000"))
+            if (year!.Equals("2000"))
             {
                 brush = new SolidColorBrush(Color.FromArgb("#2196F3"));
             }
