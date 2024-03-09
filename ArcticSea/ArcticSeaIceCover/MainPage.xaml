@@ -14,7 +14,7 @@
 
             <chart:SfCartesianChart.Title>
                 <Grid Padding="{OnPlatform Default='0,0,0,20',Android='10,0,0,0',iOS='10,0,0,0'}" ColumnDefinitions="60,*"  RowDefinitions="60,*">
-                    <Path Data="{StaticResource PathData}" Grid.RowSpan="1"  Grid.Column="0" HeightRequest="{OnPlatform Default=40}" WidthRequest="40" Margin="0,15,10,0" Fill="#2196F3">
+                    <Path Data="{StaticResource PathData}" Grid.RowSpan="1"  Grid.Column="0" HeightRequest="40" WidthRequest="40" Margin="0,15,10,0" Fill="#2196F3">
                         <Path.RenderTransform>
                             <ScaleTransform ScaleX="{OnPlatform Default=1.3,Android = 1.1,iOS=1.1}" ScaleY="{OnPlatform Default=1.3,Android=1.1,iOS=1.1}"/>
                         </Path.RenderTransform>
@@ -37,7 +37,7 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <Image Grid.Row="1"  Grid.Column="0" Source="mountain.png" HeightRequest="{OnPlatform Default=150,Android=100,iOS=100}" WidthRequest="{OnPlatform Default=200,Android=150,iOS=150}" />
-                    <Label Grid.RowSpan="2"  Grid.Column="1" Text="Average monthly sea ice extent since 2000" HeightRequest="{OnPlatform Default=65,Android=45,iOS=45}" FontSize="{OnPlatform Default=12.5,Android=11,iOS=11}" />
+                    <Label Grid.RowSpan="2"  Grid.Column="1" Text="Average monthly sea ice extent since 2000" HeightRequest="{OnPlatform Default=65,Android=45,iOS=45}" FontSize="{OnPlatform Default=12.5,Android=9,iOS=9}" />
                 </Grid>
             </chart:SfCartesianChart.PlotAreaBackgroundView>
 

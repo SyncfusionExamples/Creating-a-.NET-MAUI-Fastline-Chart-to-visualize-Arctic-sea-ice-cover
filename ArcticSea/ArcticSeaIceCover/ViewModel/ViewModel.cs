@@ -62,45 +62,28 @@ namespace ArcticSeaIceCover
             lines.RemoveAt(0);
             return lines.Select(line => {
                 string[] data = line.Split(',');
-                string year = "";
-                if (value == 2)
-                {
-                    year = "2000";
-                }
-                else if (value == 3)
-                {
-                    year = "2005";
-                }
-                else if (value == 4)
-                {
-                    year = "2010";
-                }
-                else if (value == 5)
-                {
-                    year = "2015";
-                }
-                else if (value == 6)
-                {
-                    year = "2020";
-                }
-                else if (value == 7)
-                {
-                    year = "2021";
-                }
-                else if (value == 8)
-                {
-                    year = "2022";
-                }
-                else if (value == 9)
-                {
-                    year = "2023";
-                }
-
                 var month = data[0];
                 var date = data[1];
                 var seaIceData = Convert.ToDouble(data[value]);
-                return new Model(month, year, date, seaIceData);
+                return new Model(month, getYear(value), date, seaIceData);
             });
+        }
+
+        public string getYear(int value)
+        {
+            Dictionary<int, string> yearMap = new Dictionary<int, string>
+            {
+                {2, "2000"},
+                {3, "2005"},
+                {4, "2010"},
+                {5, "2015"},
+                {6, "2020"},
+                {7, "2021"},
+                {8, "2022"},
+                {9, "2023"}
+            };
+
+            return yearMap.ContainsKey(value) ? yearMap[value] : "";
         }
     }
 }
