@@ -76,7 +76,7 @@
             <chart:SfCartesianChart.YAxes>
                 <chart:NumericalAxis EdgeLabelsDrawingMode="Center" ShowMajorGridLines="False" PlotOffsetEnd="{OnPlatform Default=50,Android=5,iOS=5}" Minimum="2" Maximum="18" Interval="2">
                     <chart:NumericalAxis.Title>
-                        <chart:ChartAxisTitle Text="Extent (millions of square kilometers)" TextColor="Black" FontSize="{OnPlatform Android=10,Default=12.5,iOS=10}"/>
+                        <chart:ChartAxisTitle Text="Ice Extent (millions of square kilometers)" TextColor="Black" FontSize="{OnPlatform Android=10,Default=12.5,iOS=10}"/>
                     </chart:NumericalAxis.Title>
                     <chart:NumericalAxis.LabelStyle>
                         <chart:ChartAxisLabelStyle TextColor="Black"/>
